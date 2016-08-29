@@ -37,14 +37,17 @@ for m in month_iter(int(date1month), int(date1year), int(date2month), int(date2y
     for day in range(1, daysof+1):
         with urllib.request.urlopen("http://www.ogimet.com/cgi-bin/gsynres?ind="+str(args.station)+"&lang=en&decoded=yes&ndays=1&ano="+str(m[1])+"&mes="+str(m[0])+"&day="+str(day)+"&hora=23") as response:
             html = response.read()
-        soup = BeautifulSoup(html, 'html.parser')
+        soup = BeautifulSoup(html, 'lxml')
         tablica = soup.find('table', attrs={'bgcolor':'#d0d0d0'})
-        for tr in range(0,24):
-            for td in range(0,18):
-                try:
-                    sheet1.write(tr+written, td, tablica.findAll('tr')[tr+1].findAll('td')[td].get_text())
-                except:
-                    pass
+        try:
+            for tr in range(0,len(tablica.findAll('tr'))-2):
+                for td in range(0,18):
+                    try:
+                        sheet1.write(tr+written, td, tablica.findAll('tr')[tr+1].findAll('td')[td].get_text())
+                    except:
+                        pass
+        except:
+            pass
         written = written +24
         pbar.update(1)
 book.save(args.file)
