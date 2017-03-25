@@ -2,7 +2,6 @@ import argparse
 
 parser = argparse.ArgumentParser()
 
-#-db DATABASE -u USERNAME -p PASSWORD -size 20000
 parser.add_argument("-s", "--start", dest = "start", help="From what date script should start. example: 01/2016")
 parser.add_argument("-e", "--end", dest = "end", help="To what date script should work. example: 05/2016")
 parser.add_argument("-i", "--ind",dest ="station", default=12560, help="Station ind number. Default is Katowice(12560)",type=int)
