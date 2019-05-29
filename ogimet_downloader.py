@@ -34,7 +34,7 @@ pbar=tqdm(total=iterations)
 for m in month_iter(int(date1month), int(date1year), int(date2month), int(date2year)):
     daysof = calendar.monthrange(m[1], m[0])[1]
     for day in range(1, daysof+1):
-        with urllib.request.urlopen("http://www.ogimet.com/cgi-bin/gsynres?ind="+str(args.station)+"&lang=en&decoded=yes&ndays=1&ano="+str(m[1])+"&mes="+str(m[0])+"&day="+str(day)+"&hora=23") as response:
+        with urllib.request.urlopen("http://www.ogimet.com/cgi-bin/gsynres?ind="+str(args.station)+"&lang=en&decoded=yes&ndays=1&ano="+str(m[1])+"&mes="+str(m[0])+"&day="+str(day)+"&hora=24") as response:
             html = response.read()
         soup = BeautifulSoup(html, 'lxml')
         tablica = soup.find('table', attrs={'bgcolor':'#d0d0d0'})
