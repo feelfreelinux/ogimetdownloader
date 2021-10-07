@@ -1,0 +1,5 @@
+xlwt
+python-dateutil
+beautifulsoup4
+lxml
+tqdm
