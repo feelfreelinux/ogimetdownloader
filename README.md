@@ -1,11 +1,10 @@
 # Ogimet Downloader
 This commandline script download data from http://ogimet.com and save it to .xls file. 
-# Required software:
+# Required softwre:
 
-- Python3
-- xlwt for python3
-- BeautifulSoup for python3
-- dateutil for python3
+- Make sure you have Python3 installed on your computer
+- Install the required modules:
+  `pip3 install -r requirements.txt`
 
 # Usage:
 
