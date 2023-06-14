@@ -4,7 +4,7 @@ parser = argparse.ArgumentParser()
 
 parser.add_argument("-s", "--start", dest = "start", help="From what date script should start. example: 01/2016")
 parser.add_argument("-e", "--end", dest = "end", help="To what date script should work. example: 05/2016")
-parser.add_argument("-i", "--ind",dest ="station", default=12560, help="Station ind number. Default is Katowice(12560)",type=int)
+parser.add_argument("-i", "--ind",dest ="station", default=12560, help="Station ind number. Default is Katowice(12560)")
 parser.add_argument("-f", "--file",dest = "file", help="To what file script should write")
 
 args = parser.parse_args()
